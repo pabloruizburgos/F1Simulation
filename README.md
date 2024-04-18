@@ -1,6 +1,6 @@
-##Proyecto de Inteligencia Artificial para la tarea "[Semana 8] Diseño de un MDP para modelar un escenario"
+# Proyecto de Inteligencia Artificial para la tarea "[Semana 8] Diseño de un MDP para modelar un escenario"
 
-#SIMULACIÓN DE UN CAMPEONATO DE F1 EN PYTHON
+# SIMULACIÓN DE UN CAMPEONATO DE F1 EN PYTHON
 
 Un agente está jugando un juego de laberinto en el que debe encontrar la salida. El agente puede moverse en diagonal, hacia delante, hacia atrás, hacia la izquierda o hacia la derecha en cada paso, es decir, tiene un vecindario de Moore. El objetivo es encontrar la salida del laberinto con la menor cantidad de movimientos.
 Define los siguientes componentes del MDP:
