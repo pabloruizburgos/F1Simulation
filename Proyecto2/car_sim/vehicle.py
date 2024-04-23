@@ -6,10 +6,11 @@ from typing import Generator
 import aux_function_module  
 
 
+
 class Vehicle:
     
     def __init__(self, env: simpy.Environment, name: str, compound_type: str,raceLapsCompleted,compoundLapsCompleted,
-                 charging_station: Boxes,circuito,probPinchazo, statistics: StatisticsCollector, 
+                 charging_station: Boxes,circuito,probPinchazo,escuderia, statistics: StatisticsCollector, 
                  min_pitStop_time:int=20, max_pitStop_time:int=30) -> None:
         """Initialize a vehicle
 
@@ -32,6 +33,7 @@ class Vehicle:
         self.probPinchazo=probPinchazo
         self.accidentProbability=self.calc_vehicule_accident_probability(circuito)
         self.statistics = statistics
+        self.escuderia=escuderia
 
     
     def calc_vehicule_accident_probability(self,circuito):
@@ -54,8 +56,8 @@ class Vehicle:
         
         return accidentProbability
     
-    
-    def racing(self, circuito, pilots_times, chrased = False):
+
+    def racing(self,circuito,pilots_times, chrased = False) -> Generator:
         
         #print("Weather:",circuito.typeRain)
         #Establecemos unos tiempos de vuelta para cada neumatico que se irán modificando siguiendo parámetros como la temperatura,lluvia...
@@ -105,6 +107,7 @@ class Vehicle:
                 chrased = True
                 break
 
+
             # Imprimir Tiempos de vuelta
             #print(self.name,"is in lap",self.raceLapsCompleted,"laptime:",aux_function_module.convertir_a_minutos_y_segundos(lap_times[list(self.compound_type.keys())[0]] * (1 + (0.003 * self.compoundLapsCompleted))))
             #print(self.name,"is in lap",self.compoundLapsCompleted,"laptime:",aux_function_module.convertir_a_minutos_y_segundos(lap_times[list(self.compound_type.keys())[0]] * (1 + (0.003 * self.compoundLapsCompleted))))
@@ -130,11 +133,6 @@ class Vehicle:
         #Acabar carrera
         self.finish(pilots_times, chrased)
        
-        #self.statistics.add_data(self.name, self.compound_type, start_race_time, end_race_time)
-        
-    
-        
-    
     def arriveBoxes(self,circuit) ->  Generator:
         
         """Arrive at the charging station and refuel
@@ -147,7 +145,8 @@ class Vehicle:
         print()
         print(f"[Vehicle {self.name}\t| Compound: {self.compound_type}]\t arrives at boxes at {aux_function_module.convertir_a_minutos_y_segundos(start_refuel_time)}")
         yield self.env.process(self.charging_station.changeTires(self,circuit))
-        #self.statistics.add_data(self.name, self.compound_type, start_refuel_time, end_refuel_time)
+        finish_refuel_time = self.env.now
+        self.statistics.add_data(self.name, self.compound_type, finish_refuel_time - start_refuel_time, circuit.name, self.escuderia)
 
     
     def finish(self, pilots_times, chrased:bool):

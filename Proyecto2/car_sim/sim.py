@@ -7,11 +7,10 @@ from vehicle import Vehicle
 from track import Track
 from statistics import StatisticsCollector # type: ignore
 
+pilots_times = dict()
 
-pilots_times = dict() #NO PUEDE SER GLOBAL!!
- 
 # Vehicle generator
-def vehicle_generator(env:simpy.Environment, boxes:Boxes, track:Track, statistics:StatisticsCollector) -> Generator:
+def vehicle_generator(env: simpy.Environment, boxes: Boxes,track:Track,statistics: StatisticsCollector) -> Generator:
     """Generates vehicles and sends them to the charging station.
 
     Args:
@@ -25,17 +24,20 @@ def vehicle_generator(env:simpy.Environment, boxes:Boxes, track:Track, statistic
     Yields:
         Generator: Simpy event generator
     """
-
-    # Creamos de forma aleatoria el nuevo compuesto a poner al principio de la carrera
-    Hamilton = Vehicle(env, "Hamilton", boxes.selectCompound(track), 0, 0, boxes, track, 0, statistics)
-    Sainz = Vehicle(env, "Sainz", boxes.selectCompound(track), 0, 0, boxes, track,0, statistics)
-    Alonso = Vehicle(env, "Alonso", boxes.selectCompound(track), 0, 0, boxes, track, 0, statistics)
-    Hulkenberg = Vehicle(env, "Hulkenberg", boxes.selectCompound(track), 0, 0, boxes, track, 0, statistics)
-    Russell = Vehicle(env, "Russel", boxes.selectCompound(track), 0, 0, boxes, track, 0, statistics)
-    Magnussen = Vehicle(env, "Magnussen", boxes.selectCompound(track), 0, 0, boxes, track, 0, statistics)
-    Leclerc = Vehicle(env, "Leclerc", boxes.selectCompound(track), 0, 0, boxes, track, 0, statistics)
-    Stroll = Vehicle(env, "Stroll", boxes.selectCompound(track), 0, 0, boxes, track, 0, statistics)
     
+    
+    # Creamos de forma aleatoria el nuevo compuesto a poner al principio de la carrera
+    
+    Hamilton = Vehicle(env, "Hamilton", boxes.selectCompound(track), 0 ,0 , boxes, track,0,"Mercedes",statistics)
+    Sainz = Vehicle(env, "Sainz",boxes.selectCompound(track), 0 , 0 , boxes, track,0,"Ferrari", statistics)
+    Alonso = Vehicle(env, "Alonso",boxes.selectCompound(track), 0 , 0 , boxes, track, 0,"Aston Martin", statistics)
+    Hulkenberg = Vehicle(env, "Hulkenberg",boxes.selectCompound(track), 0 , 0 , boxes,track, 0,"Haas",statistics)
+    Russell = Vehicle(env, "Russel",boxes.selectCompound(track), 0 , 0 , boxes ,track, 0,"Mercedes",statistics)
+    Magnussen=Vehicle(env, "Magnussen",boxes.selectCompound(track), 0 , 0 , boxes ,track, 0,"Haas",statistics)
+    Leclerc=Vehicle(env, "Leclerc",boxes.selectCompound(track), 0 , 0 , boxes ,track, 0,"Ferrari",statistics)
+    Stroll=Vehicle(env, "Stroll",boxes.selectCompound(track), 0 , 0 , boxes ,track, 0,"Aston Martin",statistics)
+    
+
     env.process(Hamilton.racing(track, pilots_times))
     env.process(Sainz.racing(track, pilots_times))
     env.process(Alonso.racing(track, pilots_times))
@@ -44,33 +46,8 @@ def vehicle_generator(env:simpy.Environment, boxes:Boxes, track:Track, statistic
     env.process(Magnussen.racing(track, pilots_times))
     env.process(Leclerc.racing(track, pilots_times))
     env.process(Stroll.racing(track, pilots_times))
-
-
+    
     yield env.timeout(10)
-
-
-def classify_pilots(times):
-    # Ordena el diccionario por tiempos de carrera (valores)
-    # items() devuelve una lista de tuplas (clave, valor) del diccionario
-    # sorted() ordena estas tuplas, donde key=lambda item: item[1] indica ordenar por el segundo elemento de cada tupla (el tiempo)
-    sorted_pilots = sorted(times.items(), key=lambda item: item[1])
-    # Convierte la lista de tuplas ordenada de nuevo en un diccionario ordenado
-    # dict() convierte la lista de tuplas de nuevo en un diccionario
-    # enumerate() añade una posición de índice, comenzando en 1, para indicar la clasificación
-    classification = {i + 1: (pilot, time) for i, (pilot, time) in enumerate(sorted_pilots)}
-    # Imprimir por pantalla la clasificacion
-    print("\n\n\t\t\tTABLA DE RESULTADOS\n")
-    for rank, (pilot, time) in classification.items():
-        print(f'{rank}. {pilot}: {time}')
-    print("\n")
-
-    """
-    if rank == 1:
-        pilot.points += 25
-    elif rank == 2:
-        pilot.points += 18
-    """
-
 
 def classify_pilots_v2(times):
     # Filtra los pilotos con tiempo de carrera y los ordena por tiempo
@@ -98,28 +75,52 @@ def classify_pilots_v2(times):
         else:
             print(f'{rank}. {pilot}: Not finished')
     print("\n")
-
+    
 
 if __name__=='__main__':
     # Simulation parameters
     SIMULATION_TIME = 1000000
     
     #Inicializa Circuito
-    Suzuka = track.Track("Suzuka", 70, 60)
+    Suzuka=track.Track("Suzuka", 70, 60)
+    Monza=track.Track("Monza", 50, 65)
+    Interlagos=track.Track("Interlagos", 60, 55)
+    Monaco=track.Track("Monaco", 78, 58)
+    Silverstone=track.Track("Silverstone", 52, 62)
+    Spa=track.Track("Spa", 44, 57)
+    Hungaroring=track.Track("Hungaroring", 70, 60)
+    Hockenheimring=track.Track("Hockenheimring", 67, 61)
+    YasMarina=track.Track("YasMarina", 55, 64)
+    Shanghai=track.Track("Shanghai", 56, 63)
+    Sepang=track.Track("Sepang", 56, 63)
+    RedBullRing=track.Track("RedBullRing", 71, 35)
+    GillesVilleneuve=track.Track("GillesVilleneuve", 70, 60)
+    Bahrain=track.Track("Bahrain", 57, 55)
+    Sochi=track.Track("Sochi", 53, 20)
+    Australia=track.Track("Australia", 58, 30)
+    Imola=track.Track("Imola", 63, 59) 
 
-    #Show Track Information
-    Suzuka.showTrackInfo()
+    circuitList=[Suzuka,Monza,Interlagos,Monaco,Silverstone,Spa,Hungaroring,Hockenheimring,YasMarina,Shanghai,Sepang,RedBullRing,GillesVilleneuve,Bahrain,Sochi,Australia,Imola]
 
     # Setup simulation environment
-    env = simpy.Environment()
-    boxes = Boxes(env)
+    
     statistics = StatisticsCollector()
+    for circuit in circuitList:
 
-    # Run simulation
-    env.process(vehicle_generator(env, boxes, Suzuka,statistics))
-    env.run(until = SIMULATION_TIME)
-    classify_pilots_v2(pilots_times)
+        env = simpy.Environment()
+        boxes = Boxes(env)
+        
+
+        #Show Track Information
+        circuit.showTrackInfo()
+
+        # Run simulation
+        env.process(vehicle_generator(env, boxes, circuit,statistics))
+        env.run(until=SIMULATION_TIME)
+        classify_pilots_v2(pilots_times)
 
     # Save statistics to pandas DataFrame
     df = statistics.to_dataframe()
-    df.to_csv('simulation_statistics.csv', index = False)
+    df.to_csv('simulation_statistics.csv', index=False)
+
+    
