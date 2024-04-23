@@ -55,7 +55,7 @@ class Vehicle:
         return accidentProbability
     
     
-    def racing(self, circuito, pilots_times):
+    def racing(self, circuito, pilots_times, chrased = False):
         
         #print("Weather:",circuito.typeRain)
         #Establecemos unos tiempos de vuelta para cada neumatico que se irán modificando siguiendo parámetros como la temperatura,lluvia...
@@ -102,6 +102,7 @@ class Vehicle:
             self.accidentProbability=random.choices(opciones, weights=probabilitiesAccidente, k=1)[0]
             if(self.accidentProbability==True):
                 print("Accidente de",self.name)
+                chrased = True
                 break
 
             # Imprimir Tiempos de vuelta
@@ -127,7 +128,7 @@ class Vehicle:
         #end_time=self.env.now
         
         #Acabar carrera
-        self.finish(pilots_times)
+        self.finish(pilots_times, chrased)
        
         #self.statistics.add_data(self.name, self.compound_type, start_race_time, end_race_time)
         
@@ -149,6 +150,9 @@ class Vehicle:
         #self.statistics.add_data(self.name, self.compound_type, start_refuel_time, end_refuel_time)
 
     
-    def finish(self, pilots_times):
-         print(f"[Vehicle {self.name}\t| Compound: {self.compound_type}]\t finishes race at {aux_function_module.convertir_a_minutos_y_segundos(self.env.now)}")
-         pilots_times.update({self.name:aux_function_module.convertir_a_minutos_y_segundos(self.env.now)})
+    def finish(self, pilots_times, chrased:bool):
+        print(f"[Vehicle {self.name}\t| Compound: {self.compound_type}]\t finishes race at {aux_function_module.convertir_a_minutos_y_segundos(self.env.now)}")
+        if chrased:
+            pilots_times.update({self.name:None})
+        else:
+            pilots_times.update({self.name:aux_function_module.convertir_a_minutos_y_segundos(self.env.now)})
