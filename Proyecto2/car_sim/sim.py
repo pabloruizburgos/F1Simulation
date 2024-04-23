@@ -25,6 +25,7 @@ def vehicle_generator(env:simpy.Environment, boxes:Boxes, track:Track, statistic
     Yields:
         Generator: Simpy event generator
     """
+
     # Creamos de forma aleatoria el nuevo compuesto a poner al principio de la carrera
     Hamilton = Vehicle(env, "Hamilton", boxes.selectCompound(track), 0, 0, boxes, track, 0, statistics)
     Sainz = Vehicle(env, "Sainz", boxes.selectCompound(track), 0, 0, boxes, track,0, statistics)
@@ -43,6 +44,7 @@ def vehicle_generator(env:simpy.Environment, boxes:Boxes, track:Track, statistic
     env.process(Magnussen.racing(track, pilots_times))
     env.process(Leclerc.racing(track, pilots_times))
     env.process(Stroll.racing(track, pilots_times))
+
 
     yield env.timeout(10)
 
@@ -70,6 +72,34 @@ def classify_pilots(times):
     """
 
 
+def classify_pilots_v2(times):
+    # Filtra los pilotos con tiempo de carrera y los ordena por tiempo
+    valid_pilots = {pilot: time for pilot, time in times.items() if time is not None}
+    sorted_pilots = sorted(valid_pilots.items(), key=lambda item: item[1])
+
+    # Calcula el número de pilotos sin tiempo de carrera
+    no_time_pilots = len(times) - len(valid_pilots)
+
+    # Convierte la lista de pilotos ordenados de nuevo en un diccionario ordenado
+    classification = {i + 1: (pilot, time) for i, (pilot, time) in enumerate(sorted_pilots)}
+    
+    # Agrega los pilotos sin tiempo de carrera al final del ranking
+    no_time_rank = len(classification) + 1
+    for pilot, time in times.items():
+        if time is None:
+            classification[no_time_rank] = (pilot, None)
+            no_time_rank += 1
+
+    # Imprime cada piloto con su tiempo en una línea separada
+    print("\n\n\t\t\tTABLA DE RESULTADOS\n")
+    for rank, (pilot, time) in classification.items():
+        if time is not None:
+            print(f'{rank}. {pilot}: {time}')
+        else:
+            print(f'{rank}. {pilot}: Not finished')
+    print("\n")
+
+
 if __name__=='__main__':
     # Simulation parameters
     SIMULATION_TIME = 1000000
@@ -88,7 +118,7 @@ if __name__=='__main__':
     # Run simulation
     env.process(vehicle_generator(env, boxes, Suzuka,statistics))
     env.run(until = SIMULATION_TIME)
-    classify_pilots(pilots_times)
+    classify_pilots_v2(pilots_times)
 
     # Save statistics to pandas DataFrame
     df = statistics.to_dataframe()
