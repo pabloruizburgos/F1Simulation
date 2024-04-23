@@ -4,8 +4,8 @@ class StatisticsCollector:
     def __init__(self):
         self.data = []
 
-    def add_data(self, vehicle_name:str, fuel_type:str, arrival_time:int, 
-                 start_refuel_time:int, end_refuel_time:int) -> None:
+    def add_data(self, vehicle_name:str, fuel_type:str, 
+                 stop_time:int,circuit:str,escuderia:str) -> None:
         """Generate dataframe
 
         Args:
@@ -15,14 +15,8 @@ class StatisticsCollector:
             start_refuel_time (int): Vehicle refueling initial time
             end_refuel_time (int): Vehicle refueling end time
         """
-        dict_data = {
-            'Vehicle': vehicle_name, 
-            'Fuel Type': fuel_type, 
-            'Arrival Time': arrival_time,
-            'Start Refuel Time': start_refuel_time, 
-            'End Refuel Time': end_refuel_time}
+        dict_data = {'Vehicle': vehicle_name, 'Fuel Type': fuel_type, 'PitStop Time': stop_time, 'Circuit': circuit, 'Escuderia':escuderia}
         self.data.append(dict_data)
 
     def to_dataframe(self):
         return pd.DataFrame(self.data)
- # type: ignore
