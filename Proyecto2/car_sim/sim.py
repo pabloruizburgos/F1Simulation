@@ -25,7 +25,6 @@ def vehicle_generator(env:simpy.Environment, boxes:Boxes, track:Track, statistic
     Yields:
         Generator: Simpy event generator
     """
-
     # Creamos de forma aleatoria el nuevo compuesto a poner al principio de la carrera
     Hamilton = Vehicle(env, "Hamilton", boxes.selectCompound(track), 0, 0, boxes, track, 0, statistics)
     Sainz = Vehicle(env, "Sainz", boxes.selectCompound(track), 0, 0, boxes, track,0, statistics)
@@ -44,7 +43,6 @@ def vehicle_generator(env:simpy.Environment, boxes:Boxes, track:Track, statistic
     env.process(Magnussen.racing(track, pilots_times))
     env.process(Leclerc.racing(track, pilots_times))
     env.process(Stroll.racing(track, pilots_times))
-
 
     yield env.timeout(10)
 
@@ -69,7 +67,6 @@ def classify_pilots(times):
     elif rank == 2:
         pilot.points += 18
     """
-
 
 if __name__=='__main__':
     # Simulation parameters
