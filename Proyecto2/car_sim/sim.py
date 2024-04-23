@@ -46,6 +46,7 @@ def vehicle_generator(env:simpy.Environment, boxes:Boxes, track:Track, statistic
 
     yield env.timeout(10)
 
+
 def classify_pilots(times):
     # Ordena el diccionario por tiempos de carrera (valores)
     # items() devuelve una lista de tuplas (clave, valor) del diccionario
@@ -67,6 +68,7 @@ def classify_pilots(times):
     elif rank == 2:
         pilot.points += 18
     """
+
 
 if __name__=='__main__':
     # Simulation parameters
