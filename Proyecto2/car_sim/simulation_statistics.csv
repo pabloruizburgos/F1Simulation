@@ -1,0 +1,24 @@
+Vehicle,Fuel Type,Arrival Time,Start Refuel Time,End Refuel Time
+0,electric,0,0,28
+1,electric,14,14,59
+2,electric,29,29,62
+3,electric,34,59,97
+4,electric,41,62,100
+6,gasoline,63,100,107
+7,diesel,77,107,113
+5,electric,50,97,117
+8,gasoline,87,113,119
+9,diesel,93,117,121
+10,diesel,103,119,122
+11,gasoline,115,121,124
+13,diesel,134,134,141
+12,electric,125,125,142
+14,diesel,146,146,149
+15,gasoline,153,153,156
+17,diesel,177,177,181
+16,electric,164,164,187
+18,diesel,186,186,194
+20,gasoline,202,202,209
+21,diesel,212,212,215
+19,electric,191,191,233
+22,electric,224,224,239
