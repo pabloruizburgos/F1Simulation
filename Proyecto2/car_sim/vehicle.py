@@ -57,7 +57,7 @@ class Vehicle:
         return accidentProbability
     
 
-    def racing(self,circuito,pilots_times, chrased = False) -> Generator:
+    def racing(self, circuito, chrased = False) -> Generator:
         
         #print("Weather:",circuito.typeRain)
         #Establecemos unos tiempos de vuelta para cada neumatico que se irán modificando siguiendo parámetros como la temperatura,lluvia...
@@ -103,7 +103,7 @@ class Vehicle:
             opciones = [True, False]
             self.accidentProbability=random.choices(opciones, weights=probabilitiesAccidente, k=1)[0]
             if(self.accidentProbability==True):
-                print("Accidente de",self.name)
+                print("Accidente de", self.name)
                 chrased = True
                 break
 
@@ -131,7 +131,7 @@ class Vehicle:
         #end_time=self.env.now
         
         #Acabar carrera
-        self.finish(pilots_times, chrased)
+        self.finish(circuito.race_classification, chrased)
        
     def arriveBoxes(self,circuit) ->  Generator:
         
@@ -146,12 +146,13 @@ class Vehicle:
         print(f"[Vehicle {self.name}\t| Compound: {self.compound_type}]\t arrives at boxes at {aux_function_module.convertir_a_minutos_y_segundos(start_refuel_time)}")
         yield self.env.process(self.charging_station.changeTires(self,circuit))
         finish_refuel_time = self.env.now
-        self.statistics.add_data(self.name, self.compound_type, finish_refuel_time - start_refuel_time, circuit.name, self.escuderia)
+        self.statistics.add_data_pit_stops(self.name, self.compound_type, finish_refuel_time - start_refuel_time, circuit.name, self.escuderia)
 
     
-    def finish(self, pilots_times, chrased:bool):
+    def finish(self, race_classification:dict, chrased:bool):
         print(f"[Vehicle {self.name}\t| Compound: {self.compound_type}]\t finishes race at {aux_function_module.convertir_a_minutos_y_segundos(self.env.now)}")
         if chrased:
-            pilots_times.update({self.name:None})
+            race_classification.update({self.name:(None, self.escuderia)})
         else:
-            pilots_times.update({self.name:aux_function_module.convertir_a_minutos_y_segundos(self.env.now)})
+            race_classification.update({self.name:(aux_function_module.convertir_a_minutos_y_segundos(self.env.now), self.escuderia)})
+        
