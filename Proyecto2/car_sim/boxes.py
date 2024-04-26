@@ -24,7 +24,7 @@ class Boxes:
         wet_compound_duration=random.randint(20,30)
         types = [{'soft':soft_compound_duration}, {'medium':medium_compound_duration}, {'hard':hard_compound_duration},{'intermediates':intermediates_compound_duration},{'wet':wet_compound_duration}]
         if circuito.typeRain == None:
-            return random.choice(types[0:2])
+            return random.choice(types[0:3])
         elif circuito.typeRain == "Light Rain":
             return random.choice(types[3:5])
         else:

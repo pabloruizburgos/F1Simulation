@@ -59,20 +59,16 @@ class Vehicle:
 
     def racing(self, circuito, chrased = False) -> Generator:
         
-        #print("Weather:",circuito.typeRain)
+       
         #Establecemos unos tiempos de vuelta para cada neumatico que se irán modificando siguiendo parámetros como la temperatura,lluvia...
-        
         lap_times={"soft":random.uniform(90,120),"medium":random.uniform(95,125),"hard":random.uniform(100,130),"intermediates":random.uniform(130,140),"wet":random.uniform(140,150)}   
         
         start_time=self.env.now
         print(f"[Vehicle {self.name}\t| Compound: {self.compound_type}]\t starts the race at {start_time}")
-        #start_race_time = self.env.now
-        #end_race_time = self.env.now
-        
+        self.statistics.add_data_pit_stops(self.name, self.compound_type,self.raceLapsCompleted,0, circuito.name, self.escuderia)
         
         while(self.raceLapsCompleted!=circuito.trackLaps):
         
-        #Primera parada
             # Establecer los tiempos por vuelta incluyendo degradación de compuesto + temperatura
             if list(self.compound_type.keys())[0]=="soft":
                 yield self.env.timeout(lap_times[list(self.compound_type.keys())[0]] * ((1 + (0.003 * self.compoundLapsCompleted)) + (1 + (0.01*circuito.avgTemperature))))
@@ -128,10 +124,9 @@ class Vehicle:
                 #Reiniciamos las vueltas del compuesto tras el cambio
                 
                 
-        #end_time=self.env.now
         
         #Acabar carrera
-        self.finish(circuito.race_classification, chrased)
+        self.finish(circuito.race_classification, chrased,circuito)
        
     def arriveBoxes(self,circuit) ->  Generator:
         
@@ -146,13 +141,14 @@ class Vehicle:
         print(f"[Vehicle {self.name}\t| Compound: {self.compound_type}]\t arrives at boxes at {aux_function_module.convertir_a_minutos_y_segundos(start_refuel_time)}")
         yield self.env.process(self.charging_station.changeTires(self,circuit))
         finish_refuel_time = self.env.now
-        self.statistics.add_data_pit_stops(self.name, self.compound_type, finish_refuel_time - start_refuel_time, circuit.name, self.escuderia)
+        self.statistics.add_data_pit_stops(self.name, self.compound_type,self.raceLapsCompleted ,finish_refuel_time - start_refuel_time, circuit.name, self.escuderia)
 
     
-    def finish(self, race_classification:dict, chrased:bool):
+    def finish(self, race_classification:dict, chrased:bool,circuit):
         print(f"[Vehicle {self.name}\t| Compound: {self.compound_type}]\t finishes race at {aux_function_module.convertir_a_minutos_y_segundos(self.env.now)}")
         if chrased:
             race_classification.update({self.name:(None, self.escuderia)})
         else:
             race_classification.update({self.name:(aux_function_module.convertir_a_minutos_y_segundos(self.env.now), self.escuderia)})
+        self.statistics.add_data_pit_stops(self.name, self.compound_type,self.raceLapsCompleted,0, circuit.name, self.escuderia)
         

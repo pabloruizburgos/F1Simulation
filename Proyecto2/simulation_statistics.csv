@@ -1,179 +1,27 @@
-Vehicle,Fuel Type,PitStop Time,Circuit,Escuderia
-Russel,{'medium': 34},29.013890282278226,Suzuka,Mercedes
-Alonso,{'soft': 27},20.239460399033305,Suzuka,Aston Martin
-Stroll,{'soft': 25},23.279851571659492,Suzuka,Aston Martin
-Magnussen,{'medium': 25},24.424876785436027,Suzuka,Haas
-Sainz,{'medium': 31},20.899471370932588,Suzuka,Ferrari
-Hulkenberg,{'soft': 20},20.622960183823125,Suzuka,Haas
-Hamilton,{'medium': 28},28.32954504096415,Suzuka,Mercedes
-Leclerc,{'soft': 27},29.704206299171346,Suzuka,Ferrari
-Alonso,{'soft': 28},20.239460399034215,Suzuka,Aston Martin
-Stroll,{'soft': 29},23.2798515716604,Suzuka,Aston Martin
-Hulkenberg,{'soft': 29},20.622960183824034,Suzuka,Haas
-Magnussen,{'medium': 31},24.424876785435117,Suzuka,Haas
-Hamilton,{'soft': 26},28.32954504096415,Suzuka,Mercedes
-Russel,{'soft': 21},29.013890282280045,Suzuka,Mercedes
-Sainz,{'soft': 27},20.899471370932588,Suzuka,Ferrari
-Leclerc,{'medium': 33},27.897699733349327,Monza,Ferrari
-Stroll,{'soft': 25},24.601510452192088,Monza,Aston Martin
-Hulkenberg,{'medium': 32},23.19076692964518,Monza,Haas
-Hamilton,{'medium': 31},28.330894045615423,Monza,Mercedes
-Alonso,{'soft': 30},28.59857796184042,Monza,Aston Martin
-Russel,{'medium': 32},26.043617307273962,Monza,Mercedes
-Magnussen,{'medium': 28},28.573714709626074,Monza,Haas
-Alonso,{'intermediates': 24},25.91695307764894,Interlagos,Aston Martin
-Hulkenberg,{'intermediates': 22},21.00800859017818,Interlagos,Haas
-Stroll,{'intermediates': 26},22.49316680141783,Interlagos,Aston Martin
-Sainz,{'intermediates': 21},29.729933376114786,Interlagos,Ferrari
-Magnussen,{'wet': 27},25.90630288988541,Interlagos,Haas
-Leclerc,{'intermediates': 25},27.285243954134785,Interlagos,Ferrari
-Hamilton,{'wet': 21},21.11960665960578,Interlagos,Mercedes
-Russel,{'intermediates': 29},27.021463782788487,Interlagos,Mercedes
-Hulkenberg,{'wet': 27},21.008008590179088,Interlagos,Haas
-Alonso,{'wet': 25},25.91695307764894,Interlagos,Aston Martin
-Sainz,{'intermediates': 25},29.729933376114786,Interlagos,Ferrari
-Stroll,{'wet': 25},22.49316680141783,Interlagos,Aston Martin
-Leclerc,{'intermediates': 22},27.285243954134785,Interlagos,Ferrari
-Magnussen,{'intermediates': 27},25.90630288988541,Interlagos,Haas
-Magnussen,{'medium': 31},23.587935487768846,Monaco,Haas
-Leclerc,{'soft': 24},27.602175920571426,Monaco,Ferrari
-Alonso,{'medium': 35},21.409267636745426,Monaco,Aston Martin
-Sainz,{'soft': 29},22.773642140938136,Monaco,Ferrari
-Stroll,{'soft': 30},24.359326556977976,Monaco,Aston Martin
-Russel,{'soft': 21},22.127268590065796,Monaco,Mercedes
-Hulkenberg,{'soft': 30},27.612035811436726,Monaco,Haas
-Hamilton,{'soft': 30},27.333165969877882,Monaco,Mercedes
-Leclerc,{'medium': 35},27.602175920570517,Monaco,Ferrari
-Magnussen,{'medium': 26},23.587935487768846,Monaco,Haas
-Alonso,{'soft': 30},21.409267636747245,Monaco,Aston Martin
-Hulkenberg,{'soft': 29},27.612035811438545,Monaco,Haas
-Magnussen,{'soft': 28},23.587935487768846,Monaco,Haas
-Sainz,{'intermediates': 27},28.739001489215298,Silverstone,Ferrari
-Stroll,{'intermediates': 27},21.108145364021766,Silverstone,Aston Martin
-Alonso,{'wet': 29},23.19789996704094,Silverstone,Aston Martin
-Hulkenberg,{'wet': 25},23.188957769545596,Silverstone,Haas
-Magnussen,{'intermediates': 20},26.042529570051556,Silverstone,Haas
-Magnussen,{'intermediates': 21},26.042529570051556,Silverstone,Haas
-Russel,{'wet': 27},26.103844100834976,Spa,Mercedes
-Stroll,{'intermediates': 21},20.247585393457484,Spa,Aston Martin
-Hamilton,{'intermediates': 29},22.4892553378304,Spa,Mercedes
-Sainz,{'wet': 26},28.21419008360499,Spa,Ferrari
-Magnussen,{'intermediates': 26},22.082432344199333,Spa,Haas
-Alonso,{'intermediates': 30},20.223883744560226,Spa,Aston Martin
-Leclerc,{'intermediates': 28},28.83687357621966,Spa,Ferrari
-Hulkenberg,{'intermediates': 20},20.641853224899023,Spa,Haas
-Stroll,{'wet': 21},20.247585393457484,Spa,Aston Martin
-Hulkenberg,{'intermediates': 20},22.368891139136394,Hungaroring,Haas
-Hamilton,{'wet': 27},24.685038689798603,Hungaroring,Mercedes
-Sainz,{'wet': 20},20.21929351166,Hungaroring,Ferrari
-Stroll,{'wet': 30},24.37287446922892,Hungaroring,Aston Martin
-Hulkenberg,{'intermediates': 27},22.368891139136394,Hungaroring,Haas
-Sainz,{'wet': 30},20.219293511661817,Hungaroring,Ferrari
-Hamilton,{'intermediates': 22},24.68503868980042,Hungaroring,Mercedes
-Stroll,{'intermediates': 23},24.372874469230737,Hungaroring,Aston Martin
-Hulkenberg,{'soft': 29},24.995096143849878,Hockenheimring,Haas
-Magnussen,{'soft': 20},25.154895659155954,Hockenheimring,Haas
-Sainz,{'soft': 22},24.275146410477646,Hockenheimring,Ferrari
-Alonso,{'soft': 30},20.32592273865066,Hockenheimring,Aston Martin
-Russel,{'medium': 26},24.865455410208597,Hockenheimring,Mercedes
-Stroll,{'medium': 25},25.703046462927887,Hockenheimring,Aston Martin
-Leclerc,{'medium': 26},21.78911247776159,Hockenheimring,Ferrari
-Hamilton,{'medium': 35},29.387226145594468,Hockenheimring,Mercedes
-Magnussen,{'medium': 30},25.154895659155954,Hockenheimring,Haas
-Sainz,{'medium': 32},24.275146410478555,Hockenheimring,Ferrari
-Hulkenberg,{'soft': 29},24.995096143849878,Hockenheimring,Haas
-Russel,{'soft': 24},24.865455410208597,Hockenheimring,Mercedes
-Leclerc,{'soft': 29},21.789112477759772,Hockenheimring,Ferrari
-Hamilton,{'medium': 27},29.387226145594468,Hockenheimring,Mercedes
-Hamilton,{'wet': 30},22.171535759324797,YasMarina,Mercedes
-Leclerc,{'intermediates': 24},25.966325121080445,YasMarina,Ferrari
-Magnussen,{'wet': 27},23.588557839055284,YasMarina,Haas
-Stroll,{'intermediates': 21},24.36816175671993,YasMarina,Aston Martin
-Sainz,{'intermediates': 30},26.70370255473972,YasMarina,Ferrari
-Alonso,{'intermediates': 23},20.33601191395246,YasMarina,Aston Martin
-Russel,{'intermediates': 29},28.65766763670399,YasMarina,Mercedes
-Hulkenberg,{'intermediates': 22},28.903665436158917,YasMarina,Haas
-Stroll,{'intermediates': 27},24.36816175671993,YasMarina,Aston Martin
-Leclerc,{'wet': 26},25.966325121080445,YasMarina,Ferrari
-Hamilton,{'intermediates': 28},22.171535759323888,YasMarina,Mercedes
-Alonso,{'intermediates': 30},20.336011913950642,YasMarina,Aston Martin
-Magnussen,{'wet': 25},23.588557839055284,YasMarina,Haas
-Hulkenberg,{'wet': 21},28.903665436158917,YasMarina,Haas
-Leclerc,{'medium': 25},20.93814296299206,Shanghai,Ferrari
-Sainz,{'soft': 26},27.1562382407119,Shanghai,Ferrari
-Hamilton,{'medium': 28},26.981516751908202,Shanghai,Mercedes
-Magnussen,{'medium': 33},28.493041194476064,Shanghai,Haas
-Hulkenberg,{'soft': 30},21.273191092086563,Shanghai,Haas
-Russel,{'medium': 32},28.08599550562576,Shanghai,Mercedes
-Alonso,{'soft': 27},20.545088479020706,Shanghai,Aston Martin
-Hamilton,{'soft': 25},26.981516751908202,Shanghai,Mercedes
-Alonso,{'soft': 27},20.545088479020706,Shanghai,Aston Martin
-Alonso,{'intermediates': 28},26.517612738126445,Sepang,Aston Martin
-Hulkenberg,{'wet': 29},21.59041476274615,Sepang,Haas
-Stroll,{'wet': 24},26.526302303109333,Sepang,Aston Martin
-Magnussen,{'intermediates': 29},28.327691988242805,Sepang,Haas
-Hamilton,{'wet': 28},29.60560207382332,Sepang,Mercedes
-Alonso,{'intermediates': 29},26.517612738127355,Sepang,Aston Martin
-Stroll,{'intermediates': 29},26.52630230311115,Sepang,Aston Martin
-Hulkenberg,{'intermediates': 23},21.59041476274797,Sepang,Haas
-Magnussen,{'intermediates': 26},28.327691988244624,Sepang,Haas
-Hulkenberg,{'wet': 23},25.839637525939906,RedBullRing,Haas
-Hamilton,{'wet': 20},22.459047945188104,RedBullRing,Mercedes
-Magnussen,{'intermediates': 22},20.350268086906,RedBullRing,Haas
-Sainz,{'wet': 22},20.32028204245671,RedBullRing,Ferrari
-Leclerc,{'intermediates': 21},25.627374291629167,RedBullRing,Ferrari
-Stroll,{'wet': 26},26.858102688573126,RedBullRing,Aston Martin
-Russel,{'intermediates': 26},20.810992983313554,RedBullRing,Mercedes
-Alonso,{'intermediates': 30},22.075325211220843,RedBullRing,Aston Martin
-Hulkenberg,{'wet': 22},25.839637525939906,RedBullRing,Haas
-Leclerc,{'intermediates': 29},25.627374291629167,RedBullRing,Ferrari
-Sainz,{'wet': 26},20.3202820424558,RedBullRing,Ferrari
-Stroll,{'wet': 29},26.858102688573126,RedBullRing,Aston Martin
-Alonso,{'wet': 22},22.075325211219024,RedBullRing,Aston Martin
-Hulkenberg,{'wet': 21},25.839637525939906,RedBullRing,Haas
-Russel,{'intermediates': 29},27.817357677720793,GillesVilleneuve,Mercedes
-Leclerc,{'intermediates': 26},21.632303713249712,GillesVilleneuve,Ferrari
-Alonso,{'wet': 20},22.000681889949192,GillesVilleneuve,Aston Martin
-Magnussen,{'wet': 23},27.99426272565688,GillesVilleneuve,Haas
-Alonso,{'intermediates': 30},22.000681889949192,GillesVilleneuve,Aston Martin
-Leclerc,{'intermediates': 24},21.632303713249712,GillesVilleneuve,Ferrari
-Stroll,{'soft': 29},26.993931398392306,Bahrain,Aston Martin
-Magnussen,{'soft': 20},24.48607333986729,Bahrain,Haas
-Leclerc,{'soft': 22},29.89329609757442,Bahrain,Ferrari
-Hulkenberg,{'soft': 28},25.51312975368637,Bahrain,Haas
-Sainz,{'medium': 35},24.09145810094924,Bahrain,Ferrari
-Hamilton,{'soft': 23},23.70770489401002,Bahrain,Mercedes
-Magnussen,{'medium': 28},24.48607333986729,Bahrain,Haas
-Stroll,{'soft': 29},26.993931398392306,Bahrain,Aston Martin
-Leclerc,{'soft': 22},29.89329609757442,Bahrain,Ferrari
-Stroll,{'medium': 28},27.979112371164774,Sochi,Aston Martin
-Hamilton,{'medium': 30},24.88438891848,Sochi,Mercedes
-Hulkenberg,{'medium': 28},25.121212866824862,Sochi,Haas
-Alonso,{'medium': 31},27.331030548611125,Sochi,Aston Martin
-Sainz,{'soft': 28},22.88451638177048,Sochi,Ferrari
-Magnussen,{'medium': 25},26.943164793574397,Sochi,Haas
-Leclerc,{'medium': 30},22.051596732479084,Sochi,Ferrari
-Russel,{'soft': 29},27.63610335199337,Sochi,Mercedes
-Hulkenberg,{'medium': 26},25.121212866824862,Sochi,Haas
-Stroll,{'medium': 26},27.979112371165684,Sochi,Aston Martin
-Magnussen,{'medium': 27},26.943164793574397,Sochi,Haas
-Alonso,{'medium': 32},24.733690305100936,Australia,Aston Martin
-Hulkenberg,{'medium': 33},23.327149642052973,Australia,Haas
-Russel,{'soft': 26},29.1132395032746,Australia,Mercedes
-Stroll,{'medium': 28},22.11321745915484,Australia,Aston Martin
-Sainz,{'soft': 29},29.212433422342656,Australia,Ferrari
-Hamilton,{'medium': 28},26.748590645938748,Australia,Mercedes
-Magnussen,{'soft': 27},29.951432548014054,Australia,Haas
-Leclerc,{'medium': 33},27.826502453983267,Australia,Ferrari
-Russel,{'medium': 31},29.1132395032746,Australia,Mercedes
-Stroll,{'soft': 21},22.11321745915484,Australia,Aston Martin
-Alonso,{'medium': 34},24.733690305100026,Australia,Aston Martin
-Hulkenberg,{'soft': 23},23.327149642052973,Australia,Haas
-Magnussen,{'soft': 22},29.951432548014054,Australia,Haas
-Hulkenberg,{'intermediates': 24},27.30093904527348,Imola,Haas
-Hamilton,{'intermediates': 20},24.010206475068117,Imola,Mercedes
-Magnussen,{'intermediates': 24},25.290525762660764,Imola,Haas
-Stroll,{'intermediates': 25},21.32560652527718,Imola,Aston Martin
-Hulkenberg,{'intermediates': 28},27.30093904527166,Imola,Haas
-Magnussen,{'intermediates': 30},25.290525762662583,Imola,Haas
-Stroll,{'intermediates': 29},21.325606525279,Imola,Aston Martin
+Vehicle,Compound Type,Vuelta,PitStop Time,Circuit,Escuderia
+Hamilton,{'soft': 20},0,0.0,Suzuka,Mercedes
+Sainz,{'medium': 33},0,0.0,Suzuka,Ferrari
+Alonso,{'soft': 23},0,0.0,Suzuka,Aston Martin
+Hulkenberg,{'medium': 31},0,0.0,Suzuka,Haas
+Russell,{'soft': 23},0,0.0,Suzuka,Mercedes
+Magnussen,{'medium': 32},0,0.0,Suzuka,Haas
+Leclerc,{'hard': 30},0,0.0,Suzuka,Ferrari
+Stroll,{'hard': 40},0,0.0,Suzuka,Aston Martin
+Hulkenberg,{'medium': 31},15,0.0,Suzuka,Haas
+Hamilton,{'soft': 22},22,29.850937319792138,Suzuka,Mercedes
+Alonso,{'medium': 31},24,24.95016986360588,Suzuka,Aston Martin
+Russell,{'hard': 34},24,23.276528161646638,Suzuka,Mercedes
+Sainz,{'medium': 33},32,0.0,Suzuka,Ferrari
+Leclerc,{'soft': 30},30,29.20529017498484,Suzuka,Ferrari
+Magnussen,{'medium': 32},33,0.0,Suzuka,Haas
+Hamilton,{'soft': 26},44,29.850937319792138,Suzuka,Mercedes
+Stroll,{'hard': 40},40,29.769170367293555,Suzuka,Aston Martin
+Russell,{'medium': 30},58,23.276528161646638,Suzuka,Mercedes
+Alonso,{'medium': 33},58,24.95016986360497,Suzuka,Aston Martin
+Hamilton,{'hard': 32},70,29.850937319792138,Suzuka,Mercedes
+Hamilton,{'hard': 32},70,0.0,Suzuka,Mercedes
+Alonso,{'medium': 33},70,0.0,Suzuka,Aston Martin
+Leclerc,{'hard': 38},62,29.20529017498484,Suzuka,Ferrari
+Russell,{'medium': 30},70,0.0,Suzuka,Mercedes
+Stroll,{'hard': 40},70,0.0,Suzuka,Aston Martin
+Leclerc,{'hard': 38},70,0.0,Suzuka,Ferrari
