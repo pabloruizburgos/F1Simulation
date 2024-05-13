@@ -21,12 +21,14 @@ Dentro de la carpeta principal (`F1Simulation_PabloRuiz_JaimeRuiz`), el reposito
 Para ejecutar este proyecto localmente, siga estos pasos:
 
 1. Clone el repositorio en su máquina local usando:
-   `git clone https://github.com/pabloruizburgos/F1Simulation/tree/main`
-2. Asegúrese de tener instaladas todas las dependencias necesarias:
+   '''
+   git clone https://github.com/pabloruizburgos/F1Simulation/tree/main
+   '''
+3. Asegúrese de tener instaladas todas las dependencias necesarias:
    `pip install simpy matplotlib numpy pandas jupyter random`
-3. Ejecute el script de simulación:
+4. Ejecute el script de simulación:
    `python3 sim.py`
-4. Abra el Jupyter Notebook para analizar los resultados:
+5. Abra el Jupyter Notebook para analizar los resultados:
    `jupyter notebook analisis_resultados.ipynb`
 
 ## Autores
