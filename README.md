@@ -11,20 +11,23 @@ El principal objetivo de este proyecto es aplicar técnicas de simulación y an�
 
 ## Estructura del Repositorio
 
-El repositorio está organizado de la siguiente manera:
-- `simulacion_f1.py`: Script de Python que utiliza SimPy para la simulación del campeonato.
-- `analisis_resultados.ipynb`: Jupyter Notebook para el análisis de los datos generados por la simulación. 
-- `data/`: Directorio que contiene los datos generados y utilizados por la simulación.
-- `docs/`: Documentación adicional y recursos utilizados o generados durante el proyecto.
-
-## Herramientas Utilizadas
-
-- **Python**: Lenguaje de programación utilizado para desarrollar la simulación y el análisis de datos.
-- **SimPy**: Biblioteca de Python para la simulación de eventos discretos.
-- **Jupyter Notebook**: Utilizado para el análisis de datos y la visualización de resultados.
+Dentro de la carpeta principal (`F1Simulation_PabloRuiz_JaimeRuiz`), el repositorio está organizado de la siguiente manera:
+- `AI_Python_Formula_One_Pablo_Ruiz_Jaime_Ruiz.pdf`: PDF (realizado en LaTeX) que contiene la explicación más profunda de la simulación.
+- `analysis.ipynb`: Jupyter Notebook para el análisis de los datos generados por la simulación. 
+- `sim.py`: Script de Python con la simulación del campeonato.
 
 ## Cómo Utilizar Este Repositorio
 
 Para ejecutar este proyecto localmente, siga estos pasos:
 
 1. Clone el repositorio en su máquina local usando:
+   `git clone https://github.com/pabloruizburgos/F1Simulation/tree/main`
+2. Asegúrese de tener instaladas todas las dependencias necesarias:
+   `pip install simpy matplotlib numpy pandas jupyter random`
+3. Ejecute el script de simulación:
+   `python3 sim.py`
+4. Abra el Jupyter Notebook para analizar los resultados:
+   `jupyter notebook analisis_resultados.ipynb`
+
+## Autores
+Este repositorio ha sido realizado por *Jaime Ruiz* (jaime.ruiz@cunef.edu) y *Pablo Ruiz* (pablo.ruizburgos@cunef.edu).
