@@ -1,14 +1,48 @@
-# Proyecto de Inteligencia Artificial para la tarea "[Semana 8] Diseño de un MDP para modelar un escenario"
+Simulación de Campeonato de F1 en Python
 
-# SIMULACIÓN DE UN CAMPEONATO DE F1 EN PYTHON
+Este repositorio contiene el proyecto de la Práctica 2 entregable de la asignatura de Inteligencia Artificial. En este proyecto, se realiza una simulación de un campeonato de Fórmula 1 utilizando Python y la biblioteca SimPy, con el objetivo de analizar diferentes estrategias y determinar cuál podría ser la más efectiva. Los resultados de la simulación se analizan utilizando un Jupyter Notebook.
+Objetivos del Proyecto
 
-*Enunciado de la tarea en canvas:*
+El principal objetivo de este proyecto es aplicar técnicas de simulación y análisis de datos para entender qué estrategias de carrera en Fórmula 1 podrían resultar en los mejores resultados bajo diferentes condiciones. Esto incluye:
 
-Un agente está jugando un juego de laberinto en el que debe encontrar la salida. El agente puede moverse en diagonal, hacia delante, hacia atrás, hacia la izquierda o hacia la derecha en cada paso, es decir, tiene un vecindario de Moore. El objetivo es encontrar la salida del laberinto con la menor cantidad de movimientos.
-Define los siguientes componentes del MDP:
-- Estados: Identifica los posibles estados en el laberinto.
-- Acciones: Determina las acciones que el agente puede tomar en cada estado.
-- Transiciones: Especifica las probabilidades de transición entre estados después de tomar una acción.
-- Recompensas: Asigna recompensas para cada acción y estado.
+    Simular múltiples escenarios de carrera.
+    Analizar el impacto de distintas estrategias de pit stop y configuraciones de vehículos.
+    Utilizar análisis de datos para evaluar el rendimiento de las estrategias simuladas.
 
-(Hay que entregar un documento con la solución en LATEX)
+Estructura del Repositorio
+
+El repositorio está organizado de la siguiente manera:
+
+    simulacion_f1.py: Script de Python que utiliza SimPy para la simulación del campeonato.
+    analisis_resultados.ipynb: Jupyter Notebook para el análisis de los datos generados por la simulación.
+    data/: Directorio que contiene los datos generados y utilizados por la simulación.
+    docs/: Documentación adicional y recursos utilizados o generados durante el proyecto.
+
+Herramientas Utilizadas
+
+    Python: Lenguaje de programación utilizado para desarrollar la simulación y el análisis de datos.
+    SimPy: Biblioteca de Python para la simulación de eventos discretos.
+    Jupyter Notebook: Utilizado para el análisis de datos y la visualización de resultados.
+
+Cómo Utilizar Este Repositorio
+
+Para ejecutar este proyecto localmente, siga estos pasos:
+
+    Clone el repositorio en su máquina local usando:
+
+    bash
+
+git clone https://github.com/tu_usuario/tu_repositorio.git
+
+Asegúrese de tener instaladas todas las dependencias necesarias:
+
+pip install simpy matplotlib numpy pandas jupyter
+
+Ejecute el script de simulación:
+
+python simulacion_f1.py
+
+Abra el Jupyter Notebook para analizar los resultados:
+
+jupyter notebook analisis_resultados.ipynb
+
