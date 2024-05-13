@@ -13,7 +13,7 @@ El principal objetivo de este proyecto es aplicar técnicas de simulación y an�
 
 El repositorio está organizado de la siguiente manera:
 - `simulacion_f1.py`: Script de Python que utiliza SimPy para la simulación del campeonato.
-- `analisis_resultados.ipynb`: Jupyter Notebook para el análisis de los datos generados por la simulación.
+- `analisis_resultados.ipynb`: Jupyter Notebook para el análisis de los datos generados por la simulación. 
 - `data/`: Directorio que contiene los datos generados y utilizados por la simulación.
 - `docs/`: Documentación adicional y recursos utilizados o generados durante el proyecto.
 
