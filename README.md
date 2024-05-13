@@ -30,19 +30,21 @@ Para ejecutar este proyecto localmente, siga estos pasos:
    ```
    git clone https://github.com/pabloruizburgos/F1Simulation/tree/main
    ```
-3. Asegúrese de tener instaladas todas las dependencias necesarias:
+2. Asegúrese de tener instaladas todas las dependencias necesarias:
    ```
    pip install simpy matplotlib numpy pandas jupyter random
    ```
-5. Ejecute el script de simulación:
+3. Ejecute el script de simulación:
    ```
    python3 sim.py
    ```
-7. Abra el Jupyter Notebook para analizar los resultados:
+4. Abra el Jupyter Notebook para analizar los resultados:
    ```
    jupyter notebook analisis_resultados.ipynb
    ```
 
+
+**Nota:** Tras la primera ejecución del código se generarán 4 archivos .csv que contienen datos recopilados durante la simulación. Estos son necesarios para el Jupyter Notebook y su análisis. Todas las nuevas ejecuciones posteriores sobreescribirán estos mismos archivos.
 
 
 ## Autores
