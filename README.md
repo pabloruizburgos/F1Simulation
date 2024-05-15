@@ -40,7 +40,7 @@ Para ejecutar este proyecto localmente, siga estos pasos:
    ```
 4. Abra el Jupyter Notebook para analizar los resultados:
    ```
-   jupyter notebook analisis_resultados.ipynb
+   jupyter notebook analysis.ipynb
    ```
 
 
